@@ -2,10 +2,12 @@ package br.com.alura.screenmatch.principal;
 
 import br.com.alura.screenmatch.model.DadosSerie;
 import br.com.alura.screenmatch.model.DadosTemporada;
+import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.services.ConsumindoApi;
 import br.com.alura.screenmatch.services.ConverteDados;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Principal {
 
@@ -26,10 +28,6 @@ public class Principal {
                     1- Buscar séries
                     2- Buscar episódios
                     3- Listar séries buscadas
-                    4- Buscar imagem
-                    5- Sinópse
-                    6- Atores
-                    7- Categoria
                                     
                     0- Sair
                     """;
@@ -85,6 +83,10 @@ public class Principal {
         }
 
         private void listarSeriesBuscadas(){
-            dadosSeries.forEach(System.out::println);
+            List<Serie> series = new ArrayList<>();
+            series = dadosSeries.stream().map(d -> new Serie(d)).collect(Collectors.toList());
+
+           series.stream().sorted(Comparator.comparing(Serie::getGenero))
+                   .forEach(System.out::println);
         }
 }

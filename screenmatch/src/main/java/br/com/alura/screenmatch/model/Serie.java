@@ -1,7 +1,5 @@
 package br.com.alura.screenmatch.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-
 import java.util.OptionalDouble;
 
 public class Serie {
@@ -24,4 +22,72 @@ public class Serie {
         this.genero = Categoria.fromString(dadosSerie.genero().split(",")[0].trim());
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public Integer getTotalTemporadas() {
+        return totalTemporadas;
+    }
+
+    public void setTotalTemporadas(Integer totalTemporadas) {
+        this.totalTemporadas = totalTemporadas;
+    }
+
+    public Categoria getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Categoria genero) {
+        this.genero = genero;
+    }
+
+    public String getAtores() {
+        return atores;
+    }
+
+    public void setAtores(String atores) {
+        this.atores = atores;
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
+
+    public double getAvaliacao() {
+        return avaliacao;
+    }
+
+    public void setAvaliacao(double avaliacao) {
+        this.avaliacao = avaliacao;
+    }
+
+    @Override
+    public String toString() {
+        return "genero=" + genero +
+                ", titulo='" + titulo + '\'' +
+                ", totalTemporadas=" + totalTemporadas +
+                ", avaliacao=" + avaliacao +
+                ", atores='" + atores + '\'' +
+                ", imagem='" + imagem + '\'' +
+                ", sinopse='" + sinopse + '\'' +
+                ", avaliacao=" + avaliacao +'\'';
+    }
 }
+
