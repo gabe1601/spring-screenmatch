@@ -35,6 +35,9 @@ public class Serie {
         this.genero = Categoria.fromString(dadosSerie.genero().split(",")[0].trim());
     }
 
+    public Serie(){
+    }
+
     public List<Episodio> getEpisodios() {
         return episodios;
     }
