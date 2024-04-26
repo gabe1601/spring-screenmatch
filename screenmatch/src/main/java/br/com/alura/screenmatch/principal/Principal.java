@@ -8,7 +8,6 @@ import br.com.alura.screenmatch.services.ConsumindoApi;
 import br.com.alura.screenmatch.services.ConverteDados;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Principal {
 

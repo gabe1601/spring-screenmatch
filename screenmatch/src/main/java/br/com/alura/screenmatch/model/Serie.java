@@ -22,7 +22,7 @@ public class Serie {
     private String imagem;
     private String sinopse;
     private double avaliacao;
-    @Transient
+    @OneToMany(mappedBy = "serie")
     private List<Episodio> episodios = new ArrayList<>();
 
     public Serie(DadosSerie dadosSerie){
