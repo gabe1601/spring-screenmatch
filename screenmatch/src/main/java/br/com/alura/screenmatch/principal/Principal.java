@@ -8,6 +8,7 @@ import br.com.alura.screenmatch.repository.SerieRepository;
 import br.com.alura.screenmatch.services.ConsumindoApi;
 import br.com.alura.screenmatch.services.ConverteDados;
 
+import javax.swing.text.html.Option;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -39,6 +40,8 @@ public class Principal {
                     2- Buscar episódios
                     3- Listar séries buscadas
                     4- Buscar série por título
+                    5- Buscar séries por ator
+                    6- Top 5 séries
                                     
                     0- Sair
                     """;
@@ -59,6 +62,9 @@ public class Principal {
                     break;
                 case 4:
                     buscarSeriePorTitulo();
+                    break;
+                case 5:
+                    buscarSeriesPorAtor();
                     break;
                 case 0:
                     System.out.println("Saindo...");
@@ -133,5 +139,15 @@ public class Principal {
         }else{
             System.out.println("Série não encontrada!");
         }
+    }
+
+    private void buscarSeriesPorAtor(){
+        System.out.print("Digite o nome para busca: ");
+        var nomeAtor = leitura.nextLine();
+        System.out.print("Avaliação a partir de que valor?: ");
+        var avaliacao = leitura.nextDouble();
+        List<Serie> seriesEncontradas = repositorio.findByAtoresContainingIgnoreCaseAndAvaliacaoGreaterThanEqual(nomeAtor, avaliacao);
+        System.out.println("Séries em que " + nomeAtor+ " trabalhou:" );
+        seriesEncontradas.forEach(s -> System.out.println(s.getTitulo() + " avaliação: " + s.getAvaliacao()));
     }
 }
