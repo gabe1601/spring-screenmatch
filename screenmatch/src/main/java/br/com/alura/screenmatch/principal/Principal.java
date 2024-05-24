@@ -178,8 +178,7 @@ public class Principal {
         Integer temporadas = leitura.nextInt();
         System.out.print("Avaliação a partir de que valor?: ");
         var avaliacao = leitura.nextDouble();
-        //precisa finalizar, não está exibindo a série
-        List<Serie> seriesPorTemporada = repositorio.findByAtoresContainingIgnoreCaseAndAvaliacaoGreaterThanEqual(String.valueOf(temporadas),avaliacao);
+        List<Serie> seriesPorTemporada = repositorio.findByTotalTemporadasLessThanAndAvaliacaoGreaterThanEqual(temporadas,avaliacao);
         seriesPorTemporada.forEach(s -> System.out.println(s.getTitulo() + " temporadas: " + s.getTotalTemporadas() + " avaliação: " + s.getAvaliacao()));
     }
 }
