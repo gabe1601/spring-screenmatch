@@ -23,5 +23,4 @@ public class SerieController {
                         s.getGenero(),s.getAtores(),s.getImagem(),s.getSinopse(),s.getAvaliacao()))
                 .collect(Collectors.toList());
     }
-
 }
