@@ -26,7 +26,7 @@ public class SerieServices {
     private List<SerieDTO> converteDados(List<Serie> series){
         return series.stream()
                 .map(s -> new SerieDTO(s.getId(),s.getTitulo(),s.getTotalTemporadas(),
-                        s.getGenero(),s.getAtores(),s.getImagem(),s.getSinopse(),s.getAvaliacao()))
+                        s.getGenero(),s.getAtores(),s.getPoster(),s.getSinopse(),s.getAvaliacao()))
                 .collect(Collectors.toList());
     }
 }

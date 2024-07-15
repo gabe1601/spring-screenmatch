@@ -19,7 +19,7 @@ public class Serie {
     @Enumerated(EnumType.STRING)
     private Categoria genero;
     private String atores;
-    private String imagem;
+    private String poster;
     private String sinopse;
     private double avaliacao;
     @OneToMany(mappedBy = "serie", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -29,7 +29,7 @@ public class Serie {
         this.titulo= dadosSerie.titulo();
         this.totalTemporadas = dadosSerie.totalTemporadas();
         this.atores = dadosSerie.atores();
-        this.imagem = dadosSerie.imagem();
+        this.poster = dadosSerie.imagem();
         this.sinopse= dadosSerie.sinopse();
         this.avaliacao = OptionalDouble.of(Double.valueOf(dadosSerie.avaliacao())).orElse(0);
         this.genero = Categoria.fromString(dadosSerie.genero().split(",")[0].trim());
@@ -86,12 +86,12 @@ public class Serie {
         this.atores = atores;
     }
 
-    public String getImagem() {
-        return imagem;
+    public String getPoster() {
+        return poster;
     }
 
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public String getSinopse() {
@@ -117,7 +117,7 @@ public class Serie {
                 ", totalTemporadas= " + totalTemporadas +
                 ", avaliacao= " + avaliacao +
                 ", atores= " + atores + '\'' +
-                ", imagem= " + imagem + '\'' +
+                ", imagem= " + poster + '\'' +
                 ", sinopse=" + sinopse + '\'' +
                 ", episodios= " + episodios +'\'';
     }
