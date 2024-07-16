@@ -29,7 +29,7 @@ public class Serie {
         this.titulo= dadosSerie.titulo();
         this.totalTemporadas = dadosSerie.totalTemporadas();
         this.atores = dadosSerie.atores();
-        this.poster = dadosSerie.imagem();
+        this.poster = dadosSerie.poster();
         this.sinopse= dadosSerie.sinopse();
         this.avaliacao = OptionalDouble.of(Double.valueOf(dadosSerie.avaliacao())).orElse(0);
         this.genero = Categoria.fromString(dadosSerie.genero().split(",")[0].trim());
@@ -117,7 +117,7 @@ public class Serie {
                 ", totalTemporadas= " + totalTemporadas +
                 ", avaliacao= " + avaliacao +
                 ", atores= " + atores + '\'' +
-                ", imagem= " + poster + '\'' +
+                ", poster= " + poster + '\'' +
                 ", sinopse=" + sinopse + '\'' +
                 ", episodios= " + episodios +'\'';
     }
