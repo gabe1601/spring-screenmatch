@@ -16,5 +16,5 @@ Este projeto é uma API desenvolvida com Spring Boot que lista dados de séries 
 - OMDb API
 
 ## Contato
-- Gabriel Pereira - gabrielpereira160101@gmail.com
+- gabrielpereira160101@gmail.com
 - [Linkedin](linkedin.com/in/gabriel-pereira-a2a6331a2/)
