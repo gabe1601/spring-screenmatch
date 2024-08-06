@@ -17,4 +17,4 @@ Este projeto é uma API desenvolvida com Spring Boot que lista dados de séries 
 
 ## Contato
 - Gabriel Pereira - gabrielpereira160101@gmail.com
-- LinkedIn: [Linkedin](linkedin.com/in/gabriel-pereira-a2a6331a2/)
+- [Linkedin](linkedin.com/in/gabriel-pereira-a2a6331a2/)
